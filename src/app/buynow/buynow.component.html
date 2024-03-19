@@ -1,0 +1,31 @@
+<!-- <h3>BuyNow!>></h3> -->
+<div class="constainer p-3">
+    <div class="row"> 
+        <div class="col-12">
+    <form [formGroup]="myShoppingForm" (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="image">Product Image</label>
+                    <input class="form-control" id="image" formControlName="pImage">
+                    <span class="small text-danger" *ngIf="myShoppingForm.get('pImage').touched && !myShoppingForm.get('pImage').valid || (submitted && myShoppingForm.get('pImage').invalid)">
+                        Product Image link is required
+                    </span>
+                  </div>
+                <div class="form-group">
+                    <label for="pName">Product Name</label>
+                    <input class="form-control" id="pName" formControlName="pName">
+                    <span class="small text-danger" *ngIf="myShoppingForm.get('pName').touched && !myShoppingForm.get('pName').valid || (submitted && myShoppingForm.get('pName').invalid)">
+                        Product Name is required
+                    </span>
+                  </div>
+                <div class="form-group">
+                    <label for="value">Product Price</label>
+                    <input class="form-control" id="value" formControlName="pPrice">
+                    <span class="small text-danger" *ngIf="myShoppingForm.get('pPrice').touched && !myShoppingForm.get('pPrice').valid || (submitted && myShoppingForm.get('pPrice').invalid)">
+                        Product Price is required
+                    </span>
+                </div>
+                <button class="btn btn-primary btn-sm float-right" type="submit">Submit</button>
+            </form>
+        </div>
+    </div> 
+</div>
